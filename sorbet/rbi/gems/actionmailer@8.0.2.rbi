@@ -758,6 +758,15 @@ class ActionMailer::Base < ::AbstractController::Base
   # source://activesupport/8.0.2/lib/active_support/configurable.rb#116
   def javascripts_dir=(value); end
 
+  # source://actionmailer//lib/action_mailer/delivery_methods.rb#52
+  def letter_opener_web_settings; end
+
+  # source://actionmailer//lib/action_mailer/delivery_methods.rb#52
+  def letter_opener_web_settings=(_arg0); end
+
+  # source://actionmailer//lib/action_mailer/delivery_methods.rb#52
+  def letter_opener_web_settings?; end
+
   # source://activesupport/8.0.2/lib/active_support/configurable.rb#115
   def logger; end
 
@@ -1232,6 +1241,15 @@ class ActionMailer::Base < ::AbstractController::Base
     # source://activesupport/8.0.2/lib/active_support/configurable.rb#116
     def javascripts_dir=(value); end
 
+    # source://actionmailer//lib/action_mailer/delivery_methods.rb#52
+    def letter_opener_web_settings; end
+
+    # source://actionmailer//lib/action_mailer/delivery_methods.rb#52
+    def letter_opener_web_settings=(value); end
+
+    # source://actionmailer//lib/action_mailer/delivery_methods.rb#52
+    def letter_opener_web_settings?; end
+
     # source://activesupport/8.0.2/lib/active_support/configurable.rb#115
     def logger; end
 
@@ -1473,6 +1491,12 @@ class ActionMailer::Base < ::AbstractController::Base
 
     # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr_fragment_cache_keys=(new_value); end
+
+    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
+    def __class_attr_letter_opener_web_settings; end
+
+    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
+    def __class_attr_letter_opener_web_settings=(new_value); end
 
     # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr_rescue_handlers; end

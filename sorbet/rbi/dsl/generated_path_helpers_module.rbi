@@ -22,10 +22,16 @@ module GeneratedPathHelpersModule
   def edit_user_registration_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def letter_opener_web_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def new_rails_conductor_inbound_email_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def new_rails_conductor_inbound_email_source_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def new_user_confirmation_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def new_user_password_path(*args); end
@@ -119,6 +125,9 @@ module GeneratedPathHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def update_rails_disk_service_path(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def user_confirmation_path(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def user_password_path(*args); end

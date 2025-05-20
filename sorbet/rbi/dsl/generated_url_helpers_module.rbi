@@ -22,10 +22,16 @@ module GeneratedUrlHelpersModule
   def edit_user_registration_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
+  def letter_opener_web_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
   def new_rails_conductor_inbound_email_source_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def new_rails_conductor_inbound_email_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def new_user_confirmation_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def new_user_password_url(*args); end
@@ -119,6 +125,9 @@ module GeneratedUrlHelpersModule
 
   sig { params(args: T.untyped).returns(String) }
   def update_rails_disk_service_url(*args); end
+
+  sig { params(args: T.untyped).returns(String) }
+  def user_confirmation_url(*args); end
 
   sig { params(args: T.untyped).returns(String) }
   def user_password_url(*args); end
