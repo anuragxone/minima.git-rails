@@ -6,6 +6,16 @@
 
 
 class ActiveSupport::TestCase
+  sig { params(fixture_name: NilClass, other_fixtures: NilClass).returns(T::Array[JwtDenylist]) }
+  sig { params(fixture_name: T.any(String, Symbol), other_fixtures: NilClass).returns(JwtDenylist) }
+  sig do
+    params(
+      fixture_name: T.any(String, Symbol),
+      other_fixtures: T.any(String, Symbol)
+    ).returns(T::Array[JwtDenylist])
+  end
+  def jwt_denylists(fixture_name = nil, *other_fixtures); end
+
   sig { params(fixture_name: NilClass, other_fixtures: NilClass).returns(T::Array[User]) }
   sig { params(fixture_name: T.any(String, Symbol), other_fixtures: NilClass).returns(User) }
   sig { params(fixture_name: T.any(String, Symbol), other_fixtures: T.any(String, Symbol)).returns(T::Array[User]) }
