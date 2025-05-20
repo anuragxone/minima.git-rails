@@ -49,3 +49,7 @@ end
 gem "sorbet", group: :development
 gem "sorbet-runtime"
 gem "tapioca", require: false, group: [ :development, :test ]
+
+gem "devise", "~> 4.9"
+
+gem "devise-jwt", "~> 0.12.1"
