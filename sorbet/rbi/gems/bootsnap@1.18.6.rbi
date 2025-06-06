@@ -129,7 +129,7 @@ module Bootsnap::CompileCache::ISeq::InstructionSequenceMixin
   # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#97
   def compile_option=(hash); end
 
-  # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#85
+  # source://tapioca/0.17.1/lib/tapioca/rbs/rewriter.rb#28
   def load_iseq(path); end
 end
 
@@ -966,5 +966,6 @@ module Psych
 end
 
 class RubyVM::InstructionSequence
+  extend ::RequireHooks::LoadIseq
   extend ::Bootsnap::CompileCache::ISeq::InstructionSequenceMixin
 end
