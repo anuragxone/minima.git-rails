@@ -46,12 +46,6 @@ module Dry
     #
     # source://dry-auto_inject//lib/dry/auto_inject.rb#61
     def AutoInject(container, options = T.unsafe(nil)); end
-
-    # source://dry-configurable/1.3.0/lib/dry/configurable.rb#11
-    def Configurable(**options); end
-
-    # source://dry-core/1.1.0/lib/dry/core.rb#52
-    def Equalizer(*keys, **options); end
   end
 end
 
@@ -112,7 +106,7 @@ class Dry::AutoInject::DependencyMap
   # source://dry-auto_inject//lib/dry/auto_inject/dependency_map.rb#33
   def to_h; end
 
-  # source://dry-auto_inject//lib/dry/auto_inject/dependency_map.rb#33
+  # source://dry-auto_inject//lib/dry/auto_inject/dependency_map.rb#34
   def to_hash; end
 
   private
@@ -153,6 +147,7 @@ class Dry::AutoInject::Injector < ::BasicObject
   # source://dry-auto_inject//lib/dry/auto_inject/injector.rb#9
   def container; end
 
+  # source://dry-auto_inject//lib/dry/auto_inject/injector.rb#17
   def respond_to?(*_arg0); end
 
   # @api private

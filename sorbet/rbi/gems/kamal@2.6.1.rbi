@@ -30,6 +30,7 @@ class Kamal::Cli::Accessory < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/accessory.rb#143
   def exec(name, *cmd); end
 
+  # source://kamal//lib/kamal/cli/main.rb#227
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 
   # source://kamal//lib/kamal/cli/accessory.rb#183
@@ -83,7 +84,7 @@ class Kamal::Cli::Accessory < ::Kamal::Cli::Base
   def with_accessory(name); end
 end
 
-# source://kamal//lib/kamal.rb#0
+# source://kamal//lib/kamal.rb#14
 module Kamal::Cli::Alias; end
 
 # source://kamal//lib/kamal/cli/alias/command.rb#1
@@ -106,6 +107,7 @@ class Kamal::Cli::App < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/app.rb#108
   def exec(*cmd); end
 
+  # source://kamal//lib/kamal/cli/main.rb#230
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 
   # source://kamal//lib/kamal/cli/app.rb#206
@@ -443,6 +445,7 @@ class Kamal::Cli::Build < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/build.rb#122
   def dev; end
 
+  # source://kamal//lib/kamal/cli/main.rb#233
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 
   # source://kamal//lib/kamal/cli/build.rb#69
@@ -517,7 +520,7 @@ end
 # source://kamal//lib/kamal/cli.rb#5
 class Kamal::Cli::DependencyError < ::StandardError; end
 
-# source://kamal//lib/kamal.rb#0
+# source://kamal//lib/kamal.rb#14
 module Kamal::Cli::Healthcheck; end
 
 # source://kamal//lib/kamal/cli/healthcheck/barrier.rb#3
@@ -571,6 +574,7 @@ class Kamal::Cli::Lock < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/lock.rb#13
   def acquire; end
 
+  # source://kamal//lib/kamal/cli/main.rb#236
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 
   # source://kamal//lib/kamal/cli/lock.rb#26
@@ -590,16 +594,16 @@ class Kamal::Cli::LockError < ::StandardError; end
 
 # source://kamal//lib/kamal/cli/main.rb#1
 class Kamal::Cli::Main < ::Kamal::Cli::Base
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#227
   def accessory(*args); end
 
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#230
   def app(*args); end
 
   # source://kamal//lib/kamal/cli/main.rb#111
   def audit; end
 
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#233
   def build(*args); end
 
   # source://kamal//lib/kamal/cli/main.rb#118
@@ -617,19 +621,19 @@ class Kamal::Cli::Main < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/main.rb#138
   def init; end
 
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#236
   def lock(*args); end
 
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#239
   def proxy(*args); end
 
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#242
   def prune(*args); end
 
   # source://kamal//lib/kamal/cli/main.rb#54
   def redeploy; end
 
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#245
   def registry(*args); end
 
   # source://kamal//lib/kamal/cli/main.rb#179
@@ -638,10 +642,10 @@ class Kamal::Cli::Main < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/main.rb#80
   def rollback(version); end
 
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#248
   def secrets(*args); end
 
-  # source://thor/1.3.2/lib/thor.rb#334
+  # source://kamal//lib/kamal/cli/main.rb#251
   def server(*args); end
 
   # source://kamal//lib/kamal/cli/main.rb#4
@@ -675,6 +679,7 @@ class Kamal::Cli::Proxy < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/proxy.rb#199
   def details; end
 
+  # source://kamal//lib/kamal/cli/main.rb#239
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 
   # source://kamal//lib/kamal/cli/proxy.rb#209
@@ -723,6 +728,7 @@ class Kamal::Cli::Prune < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/prune.rb#23
   def containers; end
 
+  # source://kamal//lib/kamal/cli/main.rb#242
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 
   # source://kamal//lib/kamal/cli/prune.rb#11
@@ -731,6 +737,7 @@ end
 
 # source://kamal//lib/kamal/cli/registry.rb#1
 class Kamal::Cli::Registry < ::Kamal::Cli::Base
+  # source://kamal//lib/kamal/cli/main.rb#245
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 
   # source://kamal//lib/kamal/cli/registry.rb#5
@@ -748,6 +755,7 @@ class Kamal::Cli::Secrets < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/secrets.rb#7
   def fetch(*secrets); end
 
+  # source://kamal//lib/kamal/cli/main.rb#248
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 
   # source://kamal//lib/kamal/cli/secrets.rb#31
@@ -770,6 +778,7 @@ class Kamal::Cli::Server < ::Kamal::Cli::Base
   # source://kamal//lib/kamal/cli/server.rb#4
   def exec(*cmd); end
 
+  # source://kamal//lib/kamal/cli/main.rb#251
   def help(command = T.unsafe(nil), subcommand = T.unsafe(nil)); end
 end
 
@@ -2133,7 +2142,7 @@ class Kamal::Configuration
   # source://kamal//lib/kamal/configuration.rb#240
   def error_pages_path; end
 
-  # source://kamal//lib/kamal/configuration.rb#232
+  # source://kamal//lib/kamal/configuration.rb#9
   def hooks_path; end
 
   # source://kamal//lib/kamal/configuration.rb#9
@@ -3143,7 +3152,7 @@ class Kamal::Configuration::Role
 
   # Returns the value of attribute name.
   #
-  # source://kamal//lib/kamal/configuration/role.rb#6
+  # source://kamal//lib/kamal/configuration/role.rb#8
   def to_s; end
 
   private
@@ -3290,7 +3299,7 @@ module Kamal::Configuration::Validation
   def validation_yml; end
 end
 
-# source://kamal//lib/kamal/configuration/validation.rb#0
+# source://kamal//lib/kamal/configuration/validation.rb#7
 module Kamal::Configuration::Validation::ClassMethods
   # source://kamal//lib/kamal/configuration/validation.rb#12
   def validation_config_key; end
@@ -3540,7 +3549,7 @@ class Kamal::EnvFile
   # source://kamal//lib/kamal/env_file.rb#7
   def to_s; end
 
-  # source://kamal//lib/kamal/env_file.rb#7
+  # source://kamal//lib/kamal/env_file.rb#22
   def to_str; end
 
   private
@@ -4003,7 +4012,7 @@ class Kamal::Secrets::Adapters::Test < ::Kamal::Secrets::Adapters::Base
   def login(account); end
 end
 
-# source://kamal//lib/kamal/secrets.rb#0
+# source://kamal//lib/kamal/secrets.rb#4
 module Kamal::Secrets::Dotenv; end
 
 # source://kamal//lib/kamal/secrets/dotenv/inline_command_substitution.rb#1
@@ -4156,18 +4165,6 @@ Kamal::VERSION = T.let(T.unsafe(nil), String)
 class SSHKit::Backend::Abstract
   include ::SSHKit::Backend::Abstract::CommandEnvMerge
 
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#36
-  def initialize(host, &block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#105
-  def as(who, &_block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#70
-  def background(*args); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#64
-  def capture(*args); end
-
   # source://kamal//lib/kamal/sshkit_with_ext.rb#13
   def capture_with_debug(*args, **kwargs); end
 
@@ -4177,84 +4174,8 @@ class SSHKit::Backend::Abstract
   # source://kamal//lib/kamal/sshkit_with_ext.rb#17
   def capture_with_pretty_json(*args, **kwargs); end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
-  def debug(*args, **_arg1, &block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#137
-  def download!(_remote, _local = T.unsafe(nil), _options = T.unsafe(nil)); end
-
-  # source://forwardable/1.3.3/forwardable.rb#231
-  def error(*args, **_arg1, &block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#78
-  def execute(*args); end
-
-  # source://forwardable/1.3.3/forwardable.rb#231
-  def fatal(*args, **_arg1, &block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#27
-  def host; end
-
-  # source://forwardable/1.3.3/forwardable.rb#231
-  def info(*args, **_arg1, &block); end
-
-  # source://forwardable/1.3.3/forwardable.rb#231
-  def log(*args, **_arg1, &block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#51
-  def make(commands = T.unsafe(nil)); end
-
   # source://kamal//lib/kamal/sshkit_with_ext.rb#21
   def puts_by_host(host, output, type: T.unsafe(nil)); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#55
-  def rake(commands = T.unsafe(nil)); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#47
-  def redact(arg); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#29
-  def run; end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#59
-  def test(*args); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#136
-  def upload!(_local, _remote, _options = T.unsafe(nil)); end
-
-  # source://forwardable/1.3.3/forwardable.rb#231
-  def warn(*args, **_arg1, &block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#97
-  def with(environment, &_block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#83
-  def within(directory, &_block); end
-
-  private
-
-  # source://kamal//lib/kamal/sshkit_with_ext.rb#36
-  def command(args, options); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#146
-  def create_command_and_execute(args, options); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#138
-  def execute_command(_cmd); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#142
-  def output; end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#150
-  def pwd_path; end
-
-  class << self
-    # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#126
-    def config; end
-
-    # source://sshkit/1.24.0/lib/sshkit/backends/abstract.rb#130
-    def configure; end
-  end
 end
 
 # Our execution pattern is for the CLI execute args lists returned
@@ -4290,56 +4211,10 @@ end
 class SSHKit::Backend::Netssh < ::SSHKit::Backend::Abstract
   include ::SSHKit::Backend::Netssh::LimitConcurrentStartsInstance
   extend ::SSHKit::Backend::Netssh::LimitConcurrentStartsClass
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#87
-  def download!(remote, local = T.unsafe(nil), options = T.unsafe(nil)); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#79
-  def upload!(local, remote, options = T.unsafe(nil)); end
-
-  private
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#141
-  def execute_command(cmd); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#116
-  def transfer_summarizer(action, options = T.unsafe(nil)); end
-
-  # source://kamal//lib/kamal/sshkit_with_ext.rb#83
-  def with_ssh(&block); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#201
-  def with_transfer(summarizer); end
-
-  class << self
-    # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#24
-    def assert_valid_transfer_method!(method); end
-
-    # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#109
-    def config; end
-
-    # source://kamal//lib/kamal/sshkit_with_ext.rb#68
-    def configure(&block); end
-
-    # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#103
-    def pool; end
-
-    # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#103
-    def pool=(_arg0); end
-  end
 end
 
 # source://kamal//lib/kamal/sshkit_with_ext.rb#60
 class SSHKit::Backend::Netssh::Configuration
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#35
-  def initialize; end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#31
-  def connection_timeout; end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#31
-  def connection_timeout=(_arg0); end
-
   # Returns the value of attribute max_concurrent_starts.
   #
   # source://kamal//lib/kamal/sshkit_with_ext.rb#61
@@ -4351,32 +4226,6 @@ class SSHKit::Backend::Netssh::Configuration
   #
   # source://kamal//lib/kamal/sshkit_with_ext.rb#61
   def max_concurrent_starts=(_arg0); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#31
-  def pty; end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#31
-  def pty=(_arg0); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#45
-  def ssh_options; end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#33
-  def ssh_options=(_arg0); end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#32
-  def transfer_method; end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#39
-  def transfer_method=(method); end
-
-  private
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#64
-  def assign_defaults; end
-
-  # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#52
-  def default_options; end
 end
 
 # source://kamal//lib/kamal/sshkit_with_ext.rb#65
@@ -4406,9 +4255,6 @@ module SSHKit::Runner; end
 # source://kamal//lib/kamal/sshkit_with_ext.rb#108
 class SSHKit::Runner::Parallel < ::SSHKit::Runner::Abstract
   include ::SSHKit::Runner::Parallel::CompleteAll
-
-  # source://kamal//lib/kamal/sshkit_with_ext.rb#115
-  def execute; end
 end
 
 # SSHKit joins the threads in sequence and fails on the first error it encounters, which means that we wait threads

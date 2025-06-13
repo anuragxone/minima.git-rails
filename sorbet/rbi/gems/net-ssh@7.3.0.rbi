@@ -1909,7 +1909,7 @@ class Net::SSH::Config
     # Returns an array of locations of OpenSSH configuration files
     # to parse by default.
     #
-    # source://sshkit/1.24.0/lib/sshkit/backends/netssh.rb#11
+    # source://net-ssh//lib/net/ssh/config.rb#56
     def default_files; end
 
     # Filters default_files down to the files that are expandable.
@@ -3061,9 +3061,6 @@ class Net::SSH::Connection::Session
   # source://net-ssh//lib/net/ssh/connection/session.rb#41
   def properties; end
 
-  # source://net-scp/4.1.0/lib/net/scp.rb#459
-  def scp; end
-
   # Send a global request of the given type. The +extra+ parameters must
   # be even in number, and conform to the same format as described for
   # Net::SSH::Buffer.from. If a callback is not specified, the request will
@@ -3188,6 +3185,8 @@ class Net::SSH::Connection::Session
   def io_select_wait(wait); end
 
   # preserve a reference to Kernel#loop
+  #
+  # source://net-ssh//lib/net/ssh/connection/session.rb#141
   def loop_forever; end
 
   # Invokes the next pending request callback with +false+.
@@ -4123,9 +4122,6 @@ class Net::SSH::Proxy::Command
   # source://net-ssh//lib/net/ssh/proxy/command.rb#20
   def command_line_template; end
 
-  # source://sshkit/1.24.0/lib/sshkit/backends/connection_pool.rb#16
-  def inspect; end
-
   # Return a new socket connected to the given host and port via the
   # proxy that was requested when the socket factory was instantiated.
   #
@@ -4419,7 +4415,7 @@ class Net::SSH::Service::Forward
   #   end
   # an alias, for token backwards compatibility with the 1.x API
   #
-  # source://net-ssh//lib/net/ssh/service/forward.rb#217
+  # source://net-ssh//lib/net/ssh/service/forward.rb#237
   def remote_to(port, host, remote_port, remote_host = T.unsafe(nil)); end
 
   # The underlying connection service instance that the port-forwarding
@@ -4462,30 +4458,47 @@ class Net::SSH::Service::Forward::Remote < ::Struct
   # Returns the value of attribute host
   #
   # @return [Object] the current value of host
+  #
+  # source://net-ssh//lib/net/ssh/service/forward.rb#20
   def host; end
 
   # Sets the attribute host
   #
   # @param value [Object] the value to set the attribute host to.
   # @return [Object] the newly set value
+  #
+  # source://net-ssh//lib/net/ssh/service/forward.rb#20
   def host=(_); end
 
   # Returns the value of attribute port
   #
   # @return [Object] the current value of port
+  #
+  # source://net-ssh//lib/net/ssh/service/forward.rb#20
   def port; end
 
   # Sets the attribute port
   #
   # @param value [Object] the value to set the attribute port to.
   # @return [Object] the newly set value
+  #
+  # source://net-ssh//lib/net/ssh/service/forward.rb#20
   def port=(_); end
 
   class << self
+    # source://net-ssh//lib/net/ssh/service/forward.rb#20
     def [](*_arg0); end
+
+    # source://net-ssh//lib/net/ssh/service/forward.rb#20
     def inspect; end
+
+    # source://net-ssh//lib/net/ssh/service/forward.rb#20
     def keyword_init?; end
+
+    # source://net-ssh//lib/net/ssh/service/forward.rb#20
     def members; end
+
+    # source://net-ssh//lib/net/ssh/service/forward.rb#20
     def new(*_arg0); end
   end
 end
@@ -4506,59 +4519,59 @@ class Net::SSH::Transport::AES128_GCM
   include ::Net::SSH::Loggable
   extend ::Net::SSH::Transport::GCMCipher
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#23
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def initialize(encrypt:, key:); end
 
   # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#24
   def algo_name; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#186
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def apply_nonce; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#106
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def block_size; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#14
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def cipher; end
 
   # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#20
   def implicit_mac; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#197
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def implicit_mac?; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#169
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def incr_nonce; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#119
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def iv_len; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#15
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def key; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#102
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def mac_length; end
 
   # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#28
   def name; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#16
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def nonce; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#177
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def nonce=(iv_s); end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#82
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def read_and_mac(data, mac, _sequence_number); end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#63
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def read_length(data, _sequence_number); end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#41
+  # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
   def update_cipher_mac(payload, _sequence_number); end
 
   class << self
-    # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#110
+    # source://net-ssh//lib/net/ssh/transport/aes128_gcm.rb#7
     def block_size; end
 
     # --- RFC 5647 ---
@@ -4587,59 +4600,59 @@ class Net::SSH::Transport::AES256_GCM
   include ::Net::SSH::Loggable
   extend ::Net::SSH::Transport::GCMCipher
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#23
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def initialize(encrypt:, key:); end
 
   # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#24
   def algo_name; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#186
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def apply_nonce; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#106
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def block_size; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#14
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def cipher; end
 
   # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#20
   def implicit_mac; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#197
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def implicit_mac?; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#169
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def incr_nonce; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#119
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def iv_len; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#15
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def key; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#102
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def mac_length; end
 
   # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#28
   def name; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#16
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def nonce; end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#177
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def nonce=(iv_s); end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#82
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def read_and_mac(data, mac, _sequence_number); end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#63
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def read_length(data, _sequence_number); end
 
-  # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#41
+  # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
   def update_cipher_mac(payload, _sequence_number); end
 
   class << self
-    # source://net-ssh//lib/net/ssh/transport/gcm_cipher.rb#110
+    # source://net-ssh//lib/net/ssh/transport/aes256_gcm.rb#7
     def block_size; end
 
     # --- RFC 5647 ---
@@ -5373,7 +5386,7 @@ class Net::SSH::Transport::Kex::Abstract5656 < ::Net::SSH::Transport::Kex::Abstr
   # source://net-ssh//lib/net/ssh/transport/kex/abstract5656.rb#12
   def curve_name; end
 
-  # source://net-ssh//lib/net/ssh/transport/kex/abstract.rb#20
+  # source://net-ssh//lib/net/ssh/transport/kex/abstract5656.rb#10
   def ecdh; end
 
   private
@@ -6460,7 +6473,7 @@ class OpenSSL::PKey::DSA < ::OpenSSL::PKey::PKey
   # Returns "ssh-dss", which is the description of this key type used by the
   # SSH2 protocol.
   #
-  # source://net-ssh//lib/net/ssh/transport/openssl.rb#96
+  # source://net-ssh//lib/net/ssh/transport/openssl.rb#100
   def ssh_signature_type; end
 
   # Returns "ssh-dss", which is the description of this key type used by the
@@ -6494,7 +6507,7 @@ class OpenSSL::PKey::EC < ::OpenSSL::PKey::PKey
   # Returns the description of this key type used by the
   # SSH2 protocol, like "ecdsa-sha2-nistp256"
   #
-  # source://net-ssh//lib/net/ssh/transport/openssl.rb#187
+  # source://net-ssh//lib/net/ssh/transport/openssl.rb#191
   def ssh_signature_type; end
 
   # Returns the description of this key type used by the
@@ -6530,7 +6543,7 @@ class OpenSSL::PKey::EC::Point
   # Returns the description of this key type used by the
   # SSH2 protocol, like "ecdsa-sha2-nistp256"
   #
-  # source://net-ssh//lib/net/ssh/transport/openssl.rb#258
+  # source://net-ssh//lib/net/ssh/transport/openssl.rb#262
   def ssh_signature_type; end
 
   # Returns the description of this key type used by the
@@ -6569,7 +6582,7 @@ class OpenSSL::PKey::RSA < ::OpenSSL::PKey::PKey
   # Returns "ssh-rsa", which is the description of this key type used by the
   # SSH2 protocol.
   #
-  # source://net-ssh//lib/net/ssh/transport/openssl.rb#51
+  # source://net-ssh//lib/net/ssh/transport/openssl.rb#55
   def ssh_signature_type; end
 
   # Returns "ssh-rsa", which is the description of this key type used by the
@@ -6584,80 +6597,11 @@ class OpenSSL::PKey::RSA < ::OpenSSL::PKey::PKey
   def to_blob; end
 end
 
-class OpenSSL::Provider
-  def inspect; end
-  def name; end
-  def unload; end
-
-  class << self
-    def load(_arg0); end
-    def provider_names; end
-  end
-end
-
+class OpenSSL::Provider; end
 class OpenSSL::Provider::ProviderError < ::OpenSSL::OpenSSLError; end
 module OpenSSL::Timestamp; end
-
-class OpenSSL::Timestamp::Factory
-  def additional_certs; end
-  def additional_certs=(_arg0); end
-  def allowed_digests; end
-  def allowed_digests=(_arg0); end
-  def create_timestamp(_arg0, _arg1, _arg2); end
-  def default_policy_id; end
-  def default_policy_id=(_arg0); end
-  def gen_time; end
-  def gen_time=(_arg0); end
-  def serial_number; end
-  def serial_number=(_arg0); end
-end
-
-class OpenSSL::Timestamp::Request
-  def initialize(*_arg0); end
-
-  def algorithm; end
-  def algorithm=(_arg0); end
-  def cert_requested=(_arg0); end
-  def cert_requested?; end
-  def message_imprint; end
-  def message_imprint=(_arg0); end
-  def nonce; end
-  def nonce=(_arg0); end
-  def policy_id; end
-  def policy_id=(_arg0); end
-  def to_der; end
-  def to_text; end
-  def version; end
-  def version=(_arg0); end
-end
-
-class OpenSSL::Timestamp::Response
-  def initialize(_arg0); end
-
-  def failure_info; end
-  def status; end
-  def status_text; end
-  def to_der; end
-  def to_text; end
-  def token; end
-  def token_info; end
-  def tsa_certificate; end
-  def verify(*_arg0); end
-end
-
+class OpenSSL::Timestamp::Factory; end
+class OpenSSL::Timestamp::Request; end
+class OpenSSL::Timestamp::Response; end
 class OpenSSL::Timestamp::TimestampError < ::OpenSSL::OpenSSLError; end
-
-class OpenSSL::Timestamp::TokenInfo
-  def initialize(_arg0); end
-
-  def algorithm; end
-  def gen_time; end
-  def message_imprint; end
-  def nonce; end
-  def ordering; end
-  def policy_id; end
-  def serial_number; end
-  def to_der; end
-  def to_text; end
-  def version; end
-end
+class OpenSSL::Timestamp::TokenInfo; end

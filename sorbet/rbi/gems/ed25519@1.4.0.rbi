@@ -57,8 +57,13 @@ module Ed25519::Provider; end
 
 module Ed25519::Provider::Ref10
   class << self
+    # source://ed25519//lib/ed25519.rb#35
     def create_keypair(_arg0); end
+
+    # source://ed25519//lib/ed25519.rb#35
     def sign(_arg0, _arg1); end
+
+    # source://ed25519//lib/ed25519.rb#35
     def verify(_arg0, _arg1, _arg2); end
   end
 end
@@ -119,7 +124,7 @@ class Ed25519::SigningKey
   #
   # @return [String] signing key converted to a bytestring
   #
-  # source://ed25519//lib/ed25519/signing_key.rb#55
+  # source://ed25519//lib/ed25519/signing_key.rb#58
   def to_str; end
 
   # Returns the value of attribute verify_key.
@@ -179,7 +184,7 @@ class Ed25519::VerifyKey
   #
   # @return [String] bytestring serialization of this public key
   #
-  # source://ed25519//lib/ed25519/verify_key.rb#35
+  # source://ed25519//lib/ed25519/verify_key.rb#38
   def to_str; end
 
   # Verify an Ed25519 signature against the message

@@ -25,82 +25,13 @@ class Hash
 end
 
 # source://sshkit//lib/sshkit/backends/netssh.rb#6
-module Net::SSH
-  class << self
-    # source://net-ssh/7.3.0/lib/net/ssh.rb#298
-    def assign_defaults(options); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh.rb#288
-    def configuration_for(host, use_ssh_config); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh.rb#225
-    def start(host, user = T.unsafe(nil), options = T.unsafe(nil), &block); end
-
-    private
-
-    # source://net-ssh/7.3.0/lib/net/ssh.rb#311
-    def _sanitize_options(options); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh.rb#320
-    def _support_deprecated_option_paranoid(options); end
-  end
-end
+module Net::SSH; end
 
 # source://sshkit//lib/sshkit/backends/netssh.rb#7
 class Net::SSH::Config
   class << self
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#60
-    def default_auth_methods; end
-
     # source://sshkit//lib/sshkit/backends/netssh.rb#11
     def default_files; end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#186
-    def expandable_default_files; end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#68
-    def for(host, files = T.unsafe(nil)); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#80
-    def load(path, host, settings = T.unsafe(nil), base_dir = T.unsafe(nil)); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#176
-    def translate(settings); end
-
-    private
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#365
-    def eval_match_conditions(condition, host, settings); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#353
-    def included_file_paths(base_dir, config_paths); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#336
-    def interpret_size(size); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#345
-    def merge_challenge_response_with_keyboard_interactive(hash); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#316
-    def pattern2regex(pattern); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#301
-    def setup_proxy(type, value); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#361
-    def tokenize_config_value(str); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#235
-    def translate_config_key(hash, key, value, settings); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#208
-    def translate_keepalive(hash, value); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#197
-    def translate_verify_host_key(value); end
-
-    # source://net-ssh/7.3.0/lib/net/ssh/config.rb#400
-    def unquote(string); end
   end
 end
 
@@ -108,31 +39,10 @@ module Net::SSH::Proxy; end
 
 # source://sshkit//lib/sshkit/backends/connection_pool.rb#14
 class Net::SSH::Proxy::Command
-  # source://net-ssh/7.3.0/lib/net/ssh/proxy/command.rb#32
-  def initialize(command_line_template); end
-
-  # source://net-ssh/7.3.0/lib/net/ssh/proxy/command.rb#116
-  def close_on_error(io); end
-
-  # source://net-ssh/7.3.0/lib/net/ssh/proxy/command.rb#23
-  def command_line; end
-
-  # source://net-ssh/7.3.0/lib/net/ssh/proxy/command.rb#20
-  def command_line_template; end
-
   # Ensure a stable string value is used, rather than memory address.
   #
   # source://sshkit//lib/sshkit/backends/connection_pool.rb#16
   def inspect; end
-
-  # source://net-ssh/7.3.0/lib/net/ssh/proxy/command.rb#40
-  def open(host, port, connection_options = T.unsafe(nil)); end
-
-  # source://net-ssh/7.3.0/lib/net/ssh/proxy/command.rb#26
-  def timeout; end
-
-  # source://net-ssh/7.3.0/lib/net/ssh/proxy/command.rb#26
-  def timeout=(_arg0); end
 end
 
 #  @author Lee Hambley
@@ -195,16 +105,7 @@ class SSHKit::Backend::Abstract
   # source://sshkit//lib/sshkit/backends/abstract.rb#64
   def capture(*args); end
 
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#13
-  def capture_with_debug(*args, **kwargs); end
-
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#9
-  def capture_with_info(*args, **kwargs); end
-
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#17
-  def capture_with_pretty_json(*args, **kwargs); end
-
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/backends/abstract.rb#25
   def debug(*args, **_arg1, &block); end
 
   # @raise [MethodUnavailableError]
@@ -212,13 +113,13 @@ class SSHKit::Backend::Abstract
   # source://sshkit//lib/sshkit/backends/abstract.rb#137
   def download!(_remote, _local = T.unsafe(nil), _options = T.unsafe(nil)); end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/backends/abstract.rb#25
   def error(*args, **_arg1, &block); end
 
   # source://sshkit//lib/sshkit/backends/abstract.rb#78
   def execute(*args); end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/backends/abstract.rb#25
   def fatal(*args, **_arg1, &block); end
 
   # Returns the value of attribute host.
@@ -226,17 +127,14 @@ class SSHKit::Backend::Abstract
   # source://sshkit//lib/sshkit/backends/abstract.rb#27
   def host; end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/backends/abstract.rb#25
   def info(*args, **_arg1, &block); end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/backends/abstract.rb#25
   def log(*args, **_arg1, &block); end
 
   # source://sshkit//lib/sshkit/backends/abstract.rb#51
   def make(commands = T.unsafe(nil)); end
-
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#21
-  def puts_by_host(host, output, type: T.unsafe(nil)); end
 
   # source://sshkit//lib/sshkit/backends/abstract.rb#55
   def rake(commands = T.unsafe(nil)); end
@@ -259,7 +157,7 @@ class SSHKit::Backend::Abstract
   # source://sshkit//lib/sshkit/backends/abstract.rb#136
   def upload!(_local, _remote, _options = T.unsafe(nil)); end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/backends/abstract.rb#25
   def warn(*args, **_arg1, &block); end
 
   # source://sshkit//lib/sshkit/backends/abstract.rb#97
@@ -270,7 +168,7 @@ class SSHKit::Backend::Abstract
 
   private
 
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#36
+  # source://sshkit//lib/sshkit/backends/abstract.rb#158
   def command(args, options); end
 
   # source://sshkit//lib/sshkit/backends/abstract.rb#146
@@ -501,7 +399,10 @@ end
 
 # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#3
 class SSHKit::Backend::ConnectionPool::NilCache < ::Struct
+  # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#3
   def closer; end
+
+  # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#3
   def closer=(_); end
 
   # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#4
@@ -514,10 +415,19 @@ class SSHKit::Backend::ConnectionPool::NilCache < ::Struct
   def same_key?(_key); end
 
   class << self
+    # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#3
     def [](*_arg0); end
+
+    # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#3
     def inspect; end
+
+    # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#3
     def keyword_init?; end
+
+    # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#3
     def members; end
+
+    # source://sshkit//lib/sshkit/backends/connection_pool/nil_cache.rb#3
     def new(*_arg0); end
   end
 end
@@ -562,7 +472,7 @@ class SSHKit::Backend::Netssh < ::SSHKit::Backend::Abstract
   # source://sshkit//lib/sshkit/backends/netssh.rb#116
   def transfer_summarizer(action, options = T.unsafe(nil)); end
 
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#83
+  # source://sshkit//lib/sshkit/backends/netssh.rb#190
   def with_ssh(&block); end
 
   # source://sshkit//lib/sshkit/backends/netssh.rb#201
@@ -579,7 +489,7 @@ class SSHKit::Backend::Netssh < ::SSHKit::Backend::Abstract
 
     # @yield [config]
     #
-    # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#68
+    # source://sshkit//lib/sshkit/backends/netssh.rb#105
     def configure(&block); end
 
     # Returns the value of attribute pool.
@@ -614,12 +524,6 @@ class SSHKit::Backend::Netssh::Configuration
   #
   # source://sshkit//lib/sshkit/backends/netssh.rb#31
   def connection_timeout=(_arg0); end
-
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#61
-  def max_concurrent_starts; end
-
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#61
-  def max_concurrent_starts=(_arg0); end
 
   # Returns the value of attribute pty.
   #
@@ -755,7 +659,7 @@ end
 #
 # source://sshkit//lib/sshkit/backends/printer.rb#5
 class SSHKit::Backend::Printer < ::SSHKit::Backend::Abstract
-  # source://sshkit//lib/sshkit/backends/abstract.rb#78
+  # source://sshkit//lib/sshkit/backends/printer.rb#12
   def download!(*args); end
 
   # source://sshkit//lib/sshkit/backends/printer.rb#7
@@ -764,7 +668,7 @@ class SSHKit::Backend::Printer < ::SSHKit::Backend::Abstract
   # source://sshkit//lib/sshkit/backends/printer.rb#14
   def test(*_arg0); end
 
-  # source://sshkit//lib/sshkit/backends/abstract.rb#78
+  # source://sshkit//lib/sshkit/backends/printer.rb#11
   def upload!(*args); end
 end
 
@@ -775,19 +679,19 @@ class SSHKit::Backend::Skipper < ::SSHKit::Backend::Abstract
   # source://sshkit//lib/sshkit/backends/skipper.rb#6
   def initialize(&block); end
 
-  # source://sshkit//lib/sshkit/backends/skipper.rb#17
+  # source://sshkit//lib/sshkit/backends/skipper.rb#23
   def debug(_messages); end
 
-  # source://sshkit//lib/sshkit/backends/abstract.rb#78
+  # source://sshkit//lib/sshkit/backends/skipper.rb#14
   def download!(*args); end
 
-  # source://sshkit//lib/sshkit/backends/skipper.rb#17
+  # source://sshkit//lib/sshkit/backends/skipper.rb#22
   def error(_messages); end
 
   # source://sshkit//lib/sshkit/backends/skipper.rb#10
   def execute_command(cmd); end
 
-  # source://sshkit//lib/sshkit/backends/skipper.rb#17
+  # source://sshkit//lib/sshkit/backends/skipper.rb#21
   def fatal(_messages); end
 
   # source://sshkit//lib/sshkit/backends/skipper.rb#17
@@ -795,13 +699,13 @@ class SSHKit::Backend::Skipper < ::SSHKit::Backend::Abstract
 
   # suppress all messages except `warn`
   #
-  # source://sshkit//lib/sshkit/backends/skipper.rb#17
+  # source://sshkit//lib/sshkit/backends/skipper.rb#20
   def log(_messages); end
 
-  # source://sshkit//lib/sshkit/backends/abstract.rb#78
+  # source://sshkit//lib/sshkit/backends/skipper.rb#15
   def test(*args); end
 
-  # source://sshkit//lib/sshkit/backends/abstract.rb#78
+  # source://sshkit//lib/sshkit/backends/skipper.rb#13
   def upload!(*args); end
 end
 
@@ -889,7 +793,7 @@ class SSHKit::Command
 
   # @return [Boolean]
   #
-  # source://sshkit//lib/sshkit/command.rb#51
+  # source://sshkit//lib/sshkit/command.rb#54
   def failed?; end
 
   # @return [Boolean]
@@ -899,7 +803,7 @@ class SSHKit::Command
 
   # @return [Boolean]
   #
-  # source://sshkit//lib/sshkit/command.rb#32
+  # source://sshkit//lib/sshkit/command.rb#35
   def finished?; end
 
   # Returns the value of attribute full_stderr.
@@ -977,7 +881,7 @@ class SSHKit::Command
 
   # @return [Boolean]
   #
-  # source://sshkit//lib/sshkit/command.rb#46
+  # source://sshkit//lib/sshkit/command.rb#49
   def successful?; end
 
   # source://sshkit//lib/sshkit/command.rb#190
@@ -1272,7 +1176,7 @@ class SSHKit::Formatter::Abstract
   # source://sshkit//lib/sshkit/formatters/abstract.rb#39
   def <<(obj); end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/formatters/abstract.rb#12
   def colorize(*args, **_arg1, &block); end
 
   # source://sshkit//lib/sshkit/formatters/abstract.rb#21
@@ -1287,7 +1191,7 @@ class SSHKit::Formatter::Abstract
   # source://sshkit//lib/sshkit/formatters/abstract.rb#21
   def info(message); end
 
-  # source://sshkit//lib/sshkit/formatters/abstract.rb#21
+  # source://sshkit//lib/sshkit/formatters/abstract.rb#25
   def log(message); end
 
   # source://sshkit//lib/sshkit/formatters/abstract.rb#31
@@ -1309,10 +1213,10 @@ class SSHKit::Formatter::Abstract
   # source://sshkit//lib/sshkit/formatters/abstract.rb#10
   def original_output; end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/formatters/abstract.rb#11
   def read(*args, **_arg1, &block); end
 
-  # source://forwardable/1.3.3/forwardable.rb#231
+  # source://sshkit//lib/sshkit/formatters/abstract.rb#11
   def rewind(*args, **_arg1, &block); end
 
   # source://sshkit//lib/sshkit/formatters/abstract.rb#21
@@ -1388,7 +1292,7 @@ class SSHKit::Host
 
   # @return [Boolean]
   #
-  # source://sshkit//lib/sshkit/host.rb#64
+  # source://sshkit//lib/sshkit/host.rb#67
   def ==(other_host); end
 
   # @return [Boolean]
@@ -1398,7 +1302,7 @@ class SSHKit::Host
 
   # @return [Boolean]
   #
-  # source://sshkit//lib/sshkit/host.rb#64
+  # source://sshkit//lib/sshkit/host.rb#68
   def equal?(other_host); end
 
   # source://sshkit//lib/sshkit/host.rb#89
@@ -1734,7 +1638,7 @@ end
 
 # source://sshkit//lib/sshkit/runners/parallel.rb#5
 class SSHKit::Runner::Parallel < ::SSHKit::Runner::Abstract
-  # source://kamal/2.6.1/lib/kamal/sshkit_with_ext.rb#115
+  # source://sshkit//lib/sshkit/runners/parallel.rb#6
   def execute; end
 end
 

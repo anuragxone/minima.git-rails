@@ -8,12 +8,6 @@
 # source://dry-core//lib/dry/core/constants.rb#5
 module Dry
   class << self
-    # source://dry-auto_inject/1.1.0/lib/dry/auto_inject.rb#61
-    def AutoInject(container, options = T.unsafe(nil)); end
-
-    # source://dry-configurable/1.3.0/lib/dry/configurable.rb#11
-    def Configurable(**options); end
-
     # Build an equalizer module for the inclusion in other class
     #
     # ## Credits
@@ -66,12 +60,18 @@ class Dry::Core::BasicObject < ::BasicObject
   def inspect; end
 
   # @since 0.8.0
+  #
+  # source://dry-core//lib/dry/core/basic_object.rb#62
   def instance_of?(_arg0); end
 
   # @since 0.8.0
+  #
+  # source://dry-core//lib/dry/core/basic_object.rb#77
   def is_a?(_arg0); end
 
   # @since 0.8.0
+  #
+  # source://dry-core//lib/dry/core/basic_object.rb#92
   def kind_of?(_arg0); end
 
   # Alias for __id__
@@ -468,7 +468,7 @@ class Dry::Core::Container
   extend ::Dry::Configurable::Methods
   extend ::Dry::Configurable::ClassMethods
 
-  # source://dry-core//lib/dry/core/container/mixin.rb#83
+  # source://dry-core//lib/dry/core/container.rb#24
   def config; end
 end
 

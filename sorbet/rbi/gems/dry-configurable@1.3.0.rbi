@@ -8,16 +8,10 @@
 # source://dry-configurable//lib/dry/configurable/constants.rb#3
 module Dry
   class << self
-    # source://dry-auto_inject/1.1.0/lib/dry/auto_inject.rb#61
-    def AutoInject(container, options = T.unsafe(nil)); end
-
     # @api public
     #
     # source://dry-configurable//lib/dry/configurable.rb#11
     def Configurable(**options); end
-
-    # source://dry-core/1.1.0/lib/dry/core.rb#52
-    def Equalizer(*keys, **options); end
   end
 end
 
@@ -215,7 +209,7 @@ class Dry::Configurable::Config
 
   # @api private
   #
-  # source://dry-core/1.1.0/lib/dry/core/equalizer.rb#87
+  # source://dry-configurable//lib/dry/configurable/config.rb#149
   def _dry_equalizer_hash; end
 
   # @api private
@@ -524,7 +518,7 @@ class Dry::Configurable::Setting
   # @api public
   # @return [Boolean]
   #
-  # source://dry-configurable//lib/dry/configurable/setting.rb#67
+  # source://dry-configurable//lib/dry/configurable/setting.rb#70
   def cloneable?; end
 
   # @api public

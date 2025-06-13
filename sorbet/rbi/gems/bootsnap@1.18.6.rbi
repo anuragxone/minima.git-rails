@@ -16,6 +16,7 @@ module Bootsnap
 
   private
 
+  # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
   def instrumentation_enabled=(_arg0); end
 
   class << self
@@ -31,6 +32,7 @@ module Bootsnap
     # source://bootsnap//lib/bootsnap.rb#37
     def instrumentation=(callback); end
 
+    # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
     def instrumentation_enabled=(_arg0); end
 
     # source://bootsnap//lib/bootsnap.rb#24
@@ -49,6 +51,8 @@ module Bootsnap
 
     # Allow the C extension to redefine `rb_get_path` without warning.
     # Allow the C extension to redefine `rb_get_path` without warning.
+    #
+    # source://bootsnap//lib/bootsnap.rb#145
     def rb_get_path(_arg0); end
 
     # source://bootsnap//lib/bootsnap.rb#48
@@ -129,7 +133,7 @@ module Bootsnap::CompileCache::ISeq::InstructionSequenceMixin
   # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#97
   def compile_option=(hash); end
 
-  # source://tapioca/0.17.1/lib/tapioca/rbs/rewriter.rb#28
+  # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#85
   def load_iseq(path); end
 end
 
@@ -204,17 +208,35 @@ end
 module Bootsnap::CompileCache::Native
   private
 
+  # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
   def compile_option_crc32=(_arg0); end
+
+  # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
   def fetch(_arg0, _arg1, _arg2, _arg3); end
+
+  # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
   def precompile(_arg0, _arg1, _arg2); end
+
+  # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
   def readonly=(_arg0); end
+
+  # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
   def revalidation=(_arg0); end
 
   class << self
+    # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
     def compile_option_crc32=(_arg0); end
+
+    # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
     def fetch(_arg0, _arg1, _arg2, _arg3); end
+
+    # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
     def precompile(_arg0, _arg1, _arg2); end
+
+    # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
     def readonly=(_arg0); end
+
+    # source://bootsnap//lib/bootsnap/compile_cache/iseq.rb#3
     def revalidation=(_arg0); end
   end
 end
@@ -288,9 +310,9 @@ module Bootsnap::CompileCache::YAML
   end
 end
 
-# source://bootsnap//lib/bootsnap/setup.rb#0
+# source://bootsnap//lib/bootsnap/setup.rb#5
 class Bootsnap::CompileCache::YAML::NoTagsVisitor < ::Psych::Visitors::NoAliasRuby
-  # source://bootsnap//lib/bootsnap/compile_cache/yaml.rb#69
+  # source://bootsnap//lib/bootsnap/setup.rb#5
   def visit(target); end
 end
 
@@ -412,7 +434,7 @@ module Bootsnap::LoadPathCache
   class << self
     # Returns the value of attribute enabled.
     #
-    # source://bootsnap//lib/bootsnap/load_path_cache.rb#27
+    # source://bootsnap//lib/bootsnap/load_path_cache.rb#28
     def enabled?; end
 
     # Returns the value of attribute load_path_cache.
@@ -543,13 +565,13 @@ module Bootsnap::LoadPathCache::ChangeObserver::ArrayMixin
   # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#51
   def []=(*args, &block); end
 
-  # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#15
+  # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#19
   def append(*entries); end
 
   # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#51
   def clear(*args, &block); end
 
-  # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#58
+  # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#62
   def clone; end
 
   # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#51
@@ -591,7 +613,7 @@ module Bootsnap::LoadPathCache::ChangeObserver::ArrayMixin
   # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#51
   def pop(*args, &block); end
 
-  # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#21
+  # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#25
   def prepend(*entries); end
 
   # source://bootsnap//lib/bootsnap/load_path_cache/change_observer.rb#15
@@ -957,8 +979,11 @@ end
 module Kernel
   private
 
-  # source://bootsnap//lib/bootsnap/load_path_cache/core_ext/kernel_require.rb#8
-  def zeitwerk_original_require(path); end
+  # source://bootsnap//lib/bootsnap/load_path_cache/core_ext/kernel_require.rb#6
+  def require(path); end
+
+  # source://bootsnap//lib/bootsnap/load_path_cache/core_ext/kernel_require.rb#4
+  def require_without_bootsnap(name); end
 end
 
 module Psych

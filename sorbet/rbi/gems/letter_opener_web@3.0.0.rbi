@@ -16,22 +16,22 @@ module LetterOpenerWeb
     # source://letter_opener_web//lib/letter_opener_web.rb#18
     def configure; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#413
+    # source://letter_opener_web//lib/letter_opener_web/engine.rb#8
     def railtie_helpers_paths; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#396
+    # source://letter_opener_web//lib/letter_opener_web/engine.rb#8
     def railtie_namespace; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#417
+    # source://letter_opener_web//lib/letter_opener_web/engine.rb#8
     def railtie_routes_url_helpers(include_path_helpers = T.unsafe(nil)); end
 
     # source://letter_opener_web//lib/letter_opener_web.rb#22
     def reset!; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#402
+    # source://letter_opener_web//lib/letter_opener_web/engine.rb#8
     def table_name_prefix; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#409
+    # source://letter_opener_web//lib/letter_opener_web/engine.rb#8
     def use_relative_model_naming?; end
   end
 end
@@ -39,22 +39,14 @@ end
 class LetterOpenerWeb::ApplicationController < ::ActionController::Base
   private
 
-  # source://actionview/8.0.2/lib/action_view/layouts.rb#328
   def _layout(lookup_context, formats, keys); end
 
   class << self
     private
 
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr___callbacks; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr___callbacks=(new_value); end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr_middleware_stack; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr_middleware_stack=(new_value); end
   end
 end
@@ -81,17 +73,7 @@ class LetterOpenerWeb::DeliveryMethod < ::LetterOpener::DeliveryMethod
 end
 
 # source://letter_opener_web//lib/letter_opener_web/engine.rb#7
-class LetterOpenerWeb::Engine < ::Rails::Engine
-  class << self
-    private
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
-    def __class_attr___callbacks; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
-    def __class_attr___callbacks=(new_value); end
-  end
-end
+class LetterOpenerWeb::Engine < ::Rails::Engine; end
 
 class LetterOpenerWeb::Letter
   def initialize(params); end
@@ -136,9 +118,7 @@ class LetterOpenerWeb::LettersController < ::LetterOpenerWeb::ApplicationControl
 
   private
 
-  # source://actionview/8.0.2/lib/action_view/layouts.rb#328
   def _layout(lookup_context, formats, keys); end
-
   def check_style; end
   def load_letter; end
   def routes; end
@@ -146,16 +126,9 @@ class LetterOpenerWeb::LettersController < ::LetterOpenerWeb::ApplicationControl
   class << self
     private
 
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr___callbacks; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr___callbacks=(new_value); end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr_middleware_stack; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr_middleware_stack=(new_value); end
   end
 end

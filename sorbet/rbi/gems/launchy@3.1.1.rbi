@@ -371,12 +371,12 @@ class Launchy::Detect::HostOs
 
   # Returns the value of attribute host_os.
   #
-  # source://launchy//lib/launchy/detect/host_os.rb#10
+  # source://launchy//lib/launchy/detect/host_os.rb#11
   def to_s; end
 
   # Returns the value of attribute host_os.
   #
-  # source://launchy//lib/launchy/detect/host_os.rb#10
+  # source://launchy//lib/launchy/detect/host_os.rb#12
   def to_str; end
 end
 

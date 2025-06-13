@@ -6,26 +6,7 @@
 
 
 # source://solid_cable//lib/action_cable/subscription_adapter/solid_cable.rb#8
-module ActionCable
-  private
-
-  # source://actioncable/8.0.2/lib/action_cable.rb#77
-  def server; end
-
-  class << self
-    # source://actioncable/8.0.2/lib/action_cable/deprecator.rb#6
-    def deprecator; end
-
-    # source://actioncable/8.0.2/lib/action_cable/gem_version.rb#7
-    def gem_version; end
-
-    # source://actioncable/8.0.2/lib/action_cable.rb#77
-    def server; end
-
-    # source://actioncable/8.0.2/lib/action_cable/version.rb#9
-    def version; end
-  end
-end
+module ActionCable; end
 
 # source://solid_cable//lib/action_cable/subscription_adapter/solid_cable.rb#9
 module ActionCable::SubscriptionAdapter; end
@@ -39,16 +20,16 @@ class ActionCable::SubscriptionAdapter::SolidCable < ::ActionCable::Subscription
   # source://solid_cable//lib/action_cable/subscription_adapter/solid_cable.rb#13
   def initialize(*_arg0); end
 
-  # source://actioncable/8.0.2/lib/action_cable/subscription_adapter/channel_prefix.rb#8
+  # source://solid_cable//lib/action_cable/subscription_adapter/solid_cable.rb#18
   def broadcast(channel, payload); end
 
   # source://solid_cable//lib/action_cable/subscription_adapter/solid_cable.rb#32
   def shutdown(*_arg0, **_arg1, &_arg2); end
 
-  # source://actioncable/8.0.2/lib/action_cable/subscription_adapter/channel_prefix.rb#13
+  # source://solid_cable//lib/action_cable/subscription_adapter/solid_cable.rb#24
   def subscribe(channel, callback, success_callback = T.unsafe(nil)); end
 
-  # source://actioncable/8.0.2/lib/action_cable/subscription_adapter/channel_prefix.rb#18
+  # source://solid_cable//lib/action_cable/subscription_adapter/solid_cable.rb#28
   def unsubscribe(channel, callback); end
 
   private
@@ -154,13 +135,13 @@ module SolidCable
     # source://solid_cable//lib/solid_cable.rb#17
     def polling_interval; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#413
+    # source://solid_cable//lib/solid_cable/engine.rb#5
     def railtie_helpers_paths; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#396
+    # source://solid_cable//lib/solid_cable/engine.rb#5
     def railtie_namespace; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#417
+    # source://solid_cable//lib/solid_cable/engine.rb#5
     def railtie_routes_url_helpers(include_path_helpers = T.unsafe(nil)); end
 
     # @return [Boolean]
@@ -168,7 +149,7 @@ module SolidCable
     # source://solid_cable//lib/solid_cable.rb#13
     def silence_polling?; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#402
+    # source://solid_cable//lib/solid_cable/engine.rb#5
     def table_name_prefix; end
 
     # source://solid_cable//lib/solid_cable.rb#29
@@ -184,7 +165,7 @@ module SolidCable
     # source://solid_cable//lib/solid_cable.rb#47
     def trim_chance; end
 
-    # source://railties/8.0.2/lib/rails/engine.rb#409
+    # source://solid_cable//lib/solid_cable/engine.rb#5
     def use_relative_model_naming?; end
 
     # source://solid_cable//lib/solid_cable.rb#37
@@ -201,17 +182,7 @@ module SolidCable
 end
 
 # source://solid_cable//lib/solid_cable/engine.rb#4
-class SolidCable::Engine < ::Rails::Engine
-  class << self
-    private
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
-    def __class_attr___callbacks; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
-    def __class_attr___callbacks=(new_value); end
-  end
-end
+class SolidCable::Engine < ::Rails::Engine; end
 
 class SolidCable::Message < ::SolidCable::Record
   include ::SolidCable::Message::GeneratedAttributeMethods
@@ -219,28 +190,16 @@ class SolidCable::Message < ::SolidCable::Record
 
   class << self
     def broadcast(channel, payload); end
-
-    # source://activerecord/8.0.2/lib/active_record/scoping/named.rb#174
     def broadcastable(*args, **_arg1); end
-
     def channel_hash_for(channel); end
     def channel_hashes_for(channels); end
-
-    # source://activerecord/8.0.2/lib/active_record/scoping/named.rb#174
     def trimmable(*args, **_arg1); end
 
     private
 
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr__validators; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr__validators=(new_value); end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr_defined_enums; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr_defined_enums=(new_value); end
   end
 end
@@ -257,16 +216,9 @@ class SolidCable::Record < ::ActiveRecord::Base
 
     private
 
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr__validators; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr__validators=(new_value); end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#15
     def __class_attr_defined_enums; end
-
-    # source://activesupport/8.0.2/lib/active_support/class_attribute.rb#17
     def __class_attr_defined_enums=(new_value); end
   end
 end

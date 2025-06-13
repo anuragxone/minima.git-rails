@@ -6,12 +6,7 @@
 
 
 # source://warden-jwt_auth//lib/warden/jwt_auth.rb#8
-module Warden
-  class << self
-    # source://warden/1.2.9/lib/warden.rb#34
-    def test_mode!; end
-  end
-end
+module Warden; end
 
 # JWT authentication plugin for warden.
 #
