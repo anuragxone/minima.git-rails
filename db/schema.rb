@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_20_083658) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_15_115613) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -18,6 +18,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_083658) do
     t.string "jti", null: false
     t.datetime "exp", null: false
     t.index ["jti"], name: "index_jwt_denylist_on_jti"
+  end
+
+  create_table "repos", force: :cascade do |t|
+    t.string "name"
+    t.string "slug", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_repos_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,8 +41,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_20_083658) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-    t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
+
+  add_foreign_key "repos", "users"
 end

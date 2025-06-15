@@ -1,14 +1,19 @@
 # typed: true
 
 Rails.application.routes.draw do
-    mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  # namespace :api do
+  #   namespace :v1 do
+  #     # resources :repos
+  #   end
+  # end
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   devise_for :users, path: "api/v1/users", defaults: { format: :json }, controllers: {
     sessions: "api/v1/users/sessions",
     registrations: "api/v1/users/registrations"
   }, path_names: {
-      sign_in: "login",
-      sign_out: "logout",
+      sign_in: "signin",
+      sign_out: "signout",
       # password: "secret",
       confirmation: "verification",
       registration: "signup"
@@ -20,7 +25,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # get ":username"
+  get ":username/:repo_slug", to: "api/v1/repos#show", as: "user_repo"
 
   # Defines the root path route ("/")
   # root "posts#index"
