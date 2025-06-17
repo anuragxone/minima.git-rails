@@ -348,7 +348,6 @@ DEPENDENCIES
   devise-jwt
   dotenv-rails
   kamal
-  letter_opener
   letter_opener_web
   pg (~> 1.1)
   puma (>= 5.0)
