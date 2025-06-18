@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  # resources :repos
+  get ":user_slug/all", to: "repos#index"
+
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   devise_for :users, defaults: { format: :json }, path: "auth",
