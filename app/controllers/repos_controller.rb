@@ -2,6 +2,12 @@ class ReposController < ApplicationController
   before_action :set_repo, only: %i[ show update destroy ]
   before_action :set_user
 
+  def initialize
+    super
+    @repo_browser = RepoManager::Browser.new
+
+  end
+
   # GET /repos
   def index
     @repos = @user.repos
@@ -10,7 +16,8 @@ class ReposController < ApplicationController
 
   # GET /repos/1
   def show
-    render json: @repo
+    repo_content = @repo_browser.list_content(user_slug: @user.slug, repo_slug: @repo.slug)
+    render json: repo_content
   end
 
   # POST /repos
@@ -41,11 +48,12 @@ class ReposController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_repo
-      @repo = Repo.find(params.expect(:slug))
+      @repo = Repo.find_by_slug(params.expect(:repo_slug))
     end
 
   def set_user
-    @user = User.find_by_slug(params.expect(:user_slug))
+    @user = User.find_by_slug!(params.expect(:user_slug))
+    # render json: { error: "Not Found" }, status: :not_found unless @user
   end
 
     # Only allow a list of trusted parameters through.
