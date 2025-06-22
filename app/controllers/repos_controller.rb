@@ -1,5 +1,5 @@
 class ReposController < ApplicationController
-  before_action :set_repo, only: %i[ show update destroy ]
+  before_action :set_repo, only: %i[ show update destroy tree ]
   before_action :set_user
 
   def initialize
@@ -43,6 +43,11 @@ class ReposController < ApplicationController
   # DELETE /repos/1
   def destroy
     @repo.destroy!
+  end
+
+  def tree
+    repo_content = @repo_browser.list_content(recursive_path, user_slug: @user.slug, repo_slug: @repo.slug)
+    render json: repo_content
   end
 
   private

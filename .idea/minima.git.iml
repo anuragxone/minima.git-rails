@@ -138,7 +138,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sshkit (v1.24.0, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stringio (v3.1.7, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.3.2, mise: 3.4.4) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="thruster (v0.1.13, mise: 3.4.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thruster (v0.1.14, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="timeout (v0.4.3, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.6, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicode-display_width (v3.1.4, mise: 3.4.4) [gem]" level="application" />

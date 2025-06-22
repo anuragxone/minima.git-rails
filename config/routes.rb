@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Letter opener web interface.
-  # mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 
   # Devise User model routes config
   devise_for :users, defaults: { format: :json }, path: "auth",
@@ -19,8 +19,9 @@ Rails.application.routes.draw do
 
   # Repositories routes config
   # resources :repos
-  get "/:user_slug/repos", to: "repos#index"
+  get "/:user_slug/", to: "repos#index"
   get "/:user_slug/:repo_slug", to: "repos#show"
+  get "/:user_slug/:repo_slug/tree/*path", to: "repos#tree"
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
