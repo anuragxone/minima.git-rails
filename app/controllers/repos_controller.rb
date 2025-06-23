@@ -1,11 +1,15 @@
 class ReposController < ApplicationController
   before_action :set_repo, only: %i[ show update destroy tree ]
-  before_action :set_user
+  before_action :set_user, only: %i[ index show  ]
 
   def initialize
     super
     @repo_browser = RepoManager::Browser.new
 
+  end
+
+  def all
+    render json: Repo.all
   end
 
   # GET /repos

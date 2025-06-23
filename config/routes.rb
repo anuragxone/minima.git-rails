@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   # Repositories routes config
   # resources :repos
+  root "repos#all"
   get "/:user_slug/", to: "repos#index"
   get "/:user_slug/:repo_slug", to: "repos#show"
   get "/:user_slug/:repo_slug/tree/*path", to: "repos#tree"
