@@ -133,7 +133,7 @@
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.13.0, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rugged (v1.9.0, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="securerandom (v0.4.1, mise: 3.4.4) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="solid_cable (v3.0.10, mise: 3.4.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="solid_cable (v3.0.11, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="solid_cache (v1.0.7, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="solid_queue (v1.1.5, mise: 3.4.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sshkit (v1.24.0, mise: 3.4.4) [gem]" level="application" />
