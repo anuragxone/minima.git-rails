@@ -2,11 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/anuragxone/five-gitrepo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/anuragxone/four-gitrepo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/anuragxone/one-gitrepo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/anuragxone/siz-gitrepo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/anuragxone/three-gitrepo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/repos/anuragxone/two-gitrepo" vcs="Git" />
   </component>
 </project>

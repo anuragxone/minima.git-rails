@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "/:user_slug", to: "repos#index", user_slug: /(?!auth$|letter_opener$|favicon$|new$)[a-zA-Z0-9_]+/
   get "/:user_slug/:repo_slug", to: "repos#show", as: :user_repo
   get "/:user_slug/:repo_slug/tree/*path", to: "repos#tree"
+  get "/:user_slug/:repo_slug/commits", to: "repos#commits"
   post "/new", to: "repos#create"
 
 

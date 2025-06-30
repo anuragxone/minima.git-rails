@@ -1,5 +1,5 @@
 class ReposController < ApplicationController
-  before_action :set_repo, only: %i[ show update destroy tree ]
+  before_action :set_repo, only: %i[ show update destroy tree commits]
   before_action :set_user, only: %i[ index show  ]
   before_action :set_user_by_id, :authenticate_user!, only: %i[ create show ]
 
@@ -53,6 +53,10 @@ class ReposController < ApplicationController
   def tree
     repo_content = @repo_browser.list_content(recursive_path, user_slug: @user.slug, repo_slug: @repo.slug)
     render json: repo_content
+  end
+
+  def commits
+    render json: @repo.commits
   end
 
   private
