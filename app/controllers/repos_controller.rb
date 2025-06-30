@@ -1,6 +1,7 @@
 class ReposController < ApplicationController
   before_action :set_repo, only: %i[ show update destroy tree ]
   before_action :set_user, only: %i[ index show  ]
+  before_action :set_user_by_id, :authenticate_user!, only: %i[ create show ]
 
   def initialize
     super
@@ -29,7 +30,7 @@ class ReposController < ApplicationController
     @repo = Repo.new(repo_params)
 
     if @repo.save
-      render json: @repo, status: :created, location: @repo
+      render json: @repo, status: :created, location: user_repo_url(@user.slug, @repo.slug)
     else
       render json: @repo.errors, status: :unprocessable_entity
     end
@@ -61,8 +62,11 @@ class ReposController < ApplicationController
     end
 
   def set_user
-    @user = User.find_by_slug!(params.expect(:user_slug))
+    @user = User.find_by_slug(params.expect(:user_slug))
     # render json: { error: "Not Found" }, status: :not_found unless @user
+  end
+  def set_user_by_id
+    @user = User.find(params[:repo][:user_id])
   end
 
     # Only allow a list of trusted parameters through.

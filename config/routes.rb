@@ -20,9 +20,10 @@ Rails.application.routes.draw do
   # Repositories routes config
   # resources :repos
   root "repos#all"
-  get "/:user_slug/", to: "repos#index"
-  get "/:user_slug/:repo_slug", to: "repos#show"
+  get "/:user_slug", to: "repos#index", user_slug: /(?!auth$|letter_opener$|favicon$|new$)[a-zA-Z0-9_]+/
+  get "/:user_slug/:repo_slug", to: "repos#show", as: :user_repo
   get "/:user_slug/:repo_slug/tree/*path", to: "repos#tree"
+  post "/new", to: "repos#create"
 
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
