@@ -2,7 +2,8 @@ require "rugged"
 class Repo < ApplicationRecord
   belongs_to :user
   validates :slug, presence: true, uniqueness: { scope: :user_id }
-  after_initialize :create_repo
+  after_create :create_repo
+  after_initialize :initialize_repo
 
   def commits
     # Create a walker starting from the HEAD
@@ -23,8 +24,9 @@ class Repo < ApplicationRecord
 
   def create_repo
     Rugged::Repository.init_at("#{RepoManager::Config::REPOS_ROOT}/#{user.slug}/#{slug}")
-    @git_repository = Rugged::Repository.new("#{RepoManager::Config::REPOS_ROOT}/#{user.slug}/#{slug}")
   end
 
-
+  def initialize_repo
+    @git_repository = Rugged::Repository.new("#{RepoManager::Config::REPOS_ROOT}/#{user.slug}/#{slug}")
+  end
 end

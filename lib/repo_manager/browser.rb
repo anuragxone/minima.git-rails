@@ -2,13 +2,11 @@
 
 module RepoManager
   class Browser
-
     def initialize
       @repos_root = RepoManager::Config::ROOT_PATH
     end
 
     def list_content(recursive_path = "", user_slug:, repo_slug:)
-
       if recursive_path.blank?
         repo_path = @repos_root.join(user_slug).join(repo_slug).to_s
       else
@@ -28,6 +26,5 @@ module RepoManager
 
 
     private
-
   end
 end
